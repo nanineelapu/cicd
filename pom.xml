@@ -9,9 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.devops</groupId>
-	<artifactId>cicd-tracker</artifactId>
+	<artifactId>cicd</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>cicd-tracker</name>
+	<packaging>war</packaging>
+	<name>cicd</name>
 	<description>Mini CI/CD Build and Deployment Tracker</description>
 	<properties>
 		<java.version>17</java.version>
