@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class ViewController {
@@ -22,6 +23,12 @@ public class ViewController {
         model.addAttribute("stats", dashboardService.getStats());
         model.addAttribute("projects", projectService.getAllProjects());
         return "index";
+    }
+
+    @GetMapping("/test")
+    @ResponseBody
+    public String test() {
+        return "App is running! If you see this, the problem is your JSP configuration.";
     }
 
     @GetMapping("/project/{id}")
