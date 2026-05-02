@@ -20,9 +20,13 @@ public class ViewController {
 
     @GetMapping("/")
     public String dashboard(Model model) {
-        model.addAttribute("stats", dashboardService.getStats());
-        model.addAttribute("projects", projectService.getAllProjects());
-        return "index";
+        try {
+            model.addAttribute("stats", dashboardService.getStats());
+            model.addAttribute("projects", projectService.getAllProjects());
+            return "index";
+        } catch (Exception e) {
+            return "redirect:/test"; // Redirect to the diagnostic endpoint if it fails
+        }
     }
 
     @GetMapping("/test")
