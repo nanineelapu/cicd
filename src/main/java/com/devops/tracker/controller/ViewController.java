@@ -21,7 +21,7 @@ public class ViewController {
     public String dashboard(Model model) {
         model.addAttribute("stats", dashboardService.getStats());
         model.addAttribute("projects", projectService.getAllProjects());
-        return "index";
+        return "dashboard";
     }
 
     @GetMapping("/project/{id}")
