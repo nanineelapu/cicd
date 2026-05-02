@@ -13,7 +13,7 @@ public class ViewController {
 
     @Autowired
     private DashboardService dashboardService;
-    
+
     @Autowired
     private ProjectService projectService;
 
@@ -21,7 +21,7 @@ public class ViewController {
     public String dashboard(Model model) {
         model.addAttribute("stats", dashboardService.getStats());
         model.addAttribute("projects", projectService.getAllProjects());
-        return "dashboard";
+        return "index";
     }
 
     @GetMapping("/project/{id}")
@@ -29,7 +29,7 @@ public class ViewController {
         model.addAttribute("project", projectService.getProjectById(id));
         return "project-details";
     }
-    
+
     @GetMapping("/register")
     public String register() {
         return "register";
